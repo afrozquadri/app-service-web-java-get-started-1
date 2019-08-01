@@ -1,6 +1,9 @@
 # Starter pipeline
 - task: DotNetCoreCLI@2
   inputs:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
     command: 'build'
     projects: 'https://github.com/afrozquadri/ntmswebdb.git'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
@@ -11,7 +14,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'vs2015-win2012r2'
+  vmImage: 'windows-latest'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
