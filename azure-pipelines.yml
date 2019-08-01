@@ -15,9 +15,12 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-- task: DotNetCoreCLI@2
+- task: AzureRmWebAppDeployment@4
   inputs:
-    command: 'build'
+    ConnectionType: 'AzureRM'
+    appType: 'webApp'
+    WebAppName: 
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
