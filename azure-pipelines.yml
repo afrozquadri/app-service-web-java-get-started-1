@@ -11,7 +11,10 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'vs2015-win2012r2'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
 
 steps:
 - script: echo Hello, world!
